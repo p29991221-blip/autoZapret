@@ -1,0 +1,67 @@
+{
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "devPath": "../src",
+    "distDir": "../src",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "vpn-app",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": false
+      },
+      "process": {
+        "all": false,
+        "exit": true,
+        "relaunch": false
+      },
+      "window": {
+        "all": false,
+        "close": true,
+        "hide": true,
+        "show": true,
+        "minimize": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": ["msi", "nsis"],
+      "identifier": "com.vpnapp.client",
+      "icon": [
+        "icons/icon.ico"
+      ],
+      "resources": [
+        "engine/bin/*",
+        "engine/lists/*"
+      ]
+    },
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'"
+    },
+    "systemTray": {
+      "iconPath": "icons/icon.ico",
+      "iconAsTemplate": false,
+      "menuOnLeftClick": false
+    },
+    "windows": [
+      {
+        "title": "vpn-app",
+        "width": 380,
+        "height": 440,
+        "resizable": false,
+        "fullscreen": false,
+        "decorations": true,
+        "alwaysOnTop": false,
+        "skipTaskbar": false,
+        "visible": true
+      }
+    ]
+  }
+}

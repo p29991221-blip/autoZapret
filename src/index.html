@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>vpn-app</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="status-row">
+      <span id="status-dot" class="dot dot--disconnected"></span>
+      <span id="status-text">Отключено</span>
+    </div>
+
+    <button id="main-btn" class="main-btn main-btn--off">Подключить</button>
+
+    <div class="meta-row">
+      <span id="strategy-label">Стратегия: —</span>
+    </div>
+
+    <!-- Текст последней ошибки: раньше он не показывался вообще, и было
+         непонятно, почему «подключено», но ничего не работает. -->
+    <div id="message" class="message message--hidden"></div>
+
+    <div class="actions">
+      <button id="update-btn" class="secondary-btn">Обновить стратегии</button>
+      <button id="settings-btn" class="secondary-btn secondary-btn--icon" title="Настройки">⚙</button>
+    </div>
+
+    <div id="settings-panel" class="settings-panel settings-panel--hidden">
+      <label class="row">
+        <input type="checkbox" id="autostart-toggle" />
+        Запускать с Windows
+      </label>
+      <label class="row">
+        <input type="checkbox" id="autoconnect-toggle" />
+        Подключаться автоматически при старте
+      </label>
+      <button id="logs-btn" class="secondary-btn">Показать логи</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
